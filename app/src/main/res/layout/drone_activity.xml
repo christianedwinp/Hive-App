@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager android:id="@+id/drone_pager"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center">
+    </android.support.v4.view.ViewPager>
+
+    <!-- <com.viewpagerindicator.LinePageIndicator android:id="@+id/line_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/drone_pager"/> -->
+
+    <!--Will change, just for testing-->
+    <Button android:id="@+id/buttonAddPage"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Page"
+        android:layout_gravity="center"/>
+
+
+    <!--Info about your drone, this is not fix yet (either use fragment or simply display in fragment -->
+    <TextView android:id="@+id/userdronename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Drone1"
+        android:textSize="12pt"
+        android:layout_marginBottom="6dp"
+        android:layout_gravity="center"/>
+    <TextView android:id="@+id/battery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Battery : 97%"
+        android:textSize="8pt"
+        android:layout_gravity="center"/>
+    <TextView android:id="@+id/timeretrieve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="As of June 14,2016 17:30"
+        android:textSize="8pt"
+        android:layout_gravity="center"/>
+
+
+    <!--Button connect to drone-->
+    <Button android:id="@+id/connectdronebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center"
+        android:paddingRight="@dimen/connectodrone_horizontalpadding"
+        android:paddingLeft="@dimen/connectodrone_horizontalpadding"
+        android:text="@string/connect_drone"
+        android:onClick="camera"/>
+
+    <!--Link to web about the company-->
+    <TextView android:id="@+id/learnmore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Learn more your driving assistance"
+        android:layout_marginBottom="12dp"/>
+
+</LinearLayout>

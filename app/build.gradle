@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '23.0.3'
 
     defaultConfig {
         applicationId "christianedwinp.hive_ver10"
@@ -32,7 +32,5 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.android.support:recyclerview-v7:24.1.0'
     compile 'com.github.eneim:Toro:1.2.0'
-    compile 'org.ros.android_core:android_gingerbread_mr1:[0.1,0.2)'
-    compile 'org.ros.android_core:android_honeycomb_mr2:[0.1,0.2)'
-    compile 'org.ros.rosjava_core:rosjava:[0.1,0.2)'
+    compile 'me.dm7.barcodescanner:zxing:1.8.4'
 }

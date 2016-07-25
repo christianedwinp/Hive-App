@@ -36,14 +36,14 @@ import im.ene.lab.toro.Toro;
  * Created by ChristianEdwin on 12-Jun-16.
  */
 public class Activity_gallery_ver2 extends AppCompatActivity {
-    private ViewPager viewPager;
-    private TabLayout tabLayout;
-    private Toolbar myToolbar;
     private WifiManager mainWifi;
     private WifiReceiver receiverWifi;
+    private Activity_QRread info = new Activity_QRread();
+
     //Router information
     String routerName = "FrisbeeAP";
-    String desiredMacAddress = "7C:DD:90:86:98:18"; //check every router BSSID, in window invoke by command prompt :
+    //FrisbeeAP BSSID : 7C:DD:90:86:98:18
+    String desiredMacAddress = info.getBSSID(); //check every router BSSID, in window invoke by command prompt :
     String routerPass = "hkust1019";
     String routerSecurity = "WPA2";
     String routerSecurityDetails = "NETWORK_ADDITIONAL_SECURITY_AES";
@@ -109,16 +109,18 @@ public class Activity_gallery_ver2 extends AppCompatActivity {
             }
         }
 
-        myToolbar = (Toolbar) findViewById(R.id.gallery_toolbar);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.gallery_toolbar);
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
-        ab.setTitle("Gallery");
-        ab.setDisplayHomeAsUpEnabled(true);
+        if (ab != null) {
+            ab.setTitle("Gallery");
+            ab.setDisplayHomeAsUpEnabled(true);
+        }
 
-        viewPager = (ViewPager) findViewById(R.id.gallery_pager); //get the view pager and make it into an object
+        ViewPager viewPager = (ViewPager) findViewById(R.id.gallery_pager);
         setupViewPager(viewPager);
 
-        tabLayout = (TabLayout) findViewById(R.id.gallery_tabs); //set tablayout ID being use
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.gallery_tabs);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         //setting the tab style

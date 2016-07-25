@@ -36,6 +36,9 @@
         <activity android:name=".Activity_gallery_ver2"
             android:parentActivityName=".Activity_Main">
         </activity>
+        <activity android:name=".Activity_QRread"
+            android:parentActivityName=".Activity_Main">
+        </activity>
 
     </application>
 

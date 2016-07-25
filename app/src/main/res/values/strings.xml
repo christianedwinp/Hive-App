@@ -30,4 +30,5 @@
     <!--Strings related to wifi dialog-->
     <string name="wifi_dialogTitle">Connect to drone ?</string>
     <string name="wifi_dialogMessage">Your WiFi is either turn off or connected to another network. This application required to modify your wifi connection to run properly</string>
+
 </resources>
