@@ -31,4 +31,7 @@
     <string name="wifi_dialogTitle">Connect to drone ?</string>
     <string name="wifi_dialogMessage">Your WiFi is either turn off or connected to another network. This application required to modify your wifi connection to run properly</string>
 
+    <!--Strings related to QR read dialog-->
+    <string name="QR_dialogTitle">Scan unsuccessful</string>
+    <string name="QR_dialogMessage">Do you want to rescan your drone QR code ?</string>
 </resources>

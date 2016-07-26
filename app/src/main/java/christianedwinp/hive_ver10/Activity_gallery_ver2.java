@@ -5,14 +5,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.net.wifi.ScanResult;
+import android.content.SharedPreferences;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.SyncStateContract;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -23,13 +21,14 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import im.ene.lab.toro.Toro;
 
 /**
@@ -38,15 +37,25 @@ import im.ene.lab.toro.Toro;
 public class Activity_gallery_ver2 extends AppCompatActivity {
     private WifiManager mainWifi;
     private WifiReceiver receiverWifi;
-    private Activity_QRread info = new Activity_QRread();
+    private int droneRegNumber = getIntent().getIntExtra("DRONE_REG_NUMBER", 0);
 
     //Router information
     String routerName = "FrisbeeAP";
     //FrisbeeAP BSSID : 7C:DD:90:86:98:18
-    String desiredMacAddress = info.getBSSID(); //check every router BSSID, in window invoke by command prompt :
+    String desiredMacAddress;
     String routerPass = "hkust1019";
     String routerSecurity = "WPA2";
     String routerSecurityDetails = "NETWORK_ADDITIONAL_SECURITY_AES";
+    //To get the the correct BSSID number
+    public String getBSSID(int i){
+        SharedPreferences prefs = getSharedPreferences("DroneData", Context.MODE_PRIVATE);
+        Set<String> bssidSet = prefs.getStringSet("droneBSSID",new HashSet<String>());
+        ArrayList<String> desiredBSSID = new ArrayList<>();
+        for(String str : bssidSet) {
+            desiredBSSID.add(str);
+        }
+        return desiredBSSID.get(i);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +63,7 @@ public class Activity_gallery_ver2 extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.gallery_activity);
         Toro.attach(this);
+        desiredMacAddress = getBSSID(droneRegNumber);
 
         mainWifi = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         receiverWifi = new WifiReceiver();

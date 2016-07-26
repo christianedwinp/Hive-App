@@ -8,6 +8,7 @@ import android.support.annotation.StringDef;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ public class Activity_Mydrone extends Fragment{
     public ViewPager viewPager;
     private Adapter_Mydrone adapter;
     Button buttonAddDrone, connectdrone;
+    private static final String TAG = Activity_Mydrone.class.getSimpleName();
 
     @Nullable
     @Override
@@ -45,6 +47,11 @@ public class Activity_Mydrone extends Fragment{
         loadDroneData();
 
         return view;
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
     }
 
     private void buttonClick() {
@@ -69,7 +76,10 @@ public class Activity_Mydrone extends Fragment{
         SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences("DroneData", Context.MODE_PRIVATE);
         Set<String> droneRegName = sharedPreferences.getStringSet("droneNames",new HashSet<String>());
 
+        Log.d(TAG, "LOAD DRONE NAMESET :"+ droneRegName);
+
         for(String str : droneRegName) {
+            Log.d(TAG, "CREATE DRONE :"+ str);
             Bundle bundle = new Bundle();
             bundle.putString("data", str);
             Fragment_Mydrone fragmentChild = new Fragment_Mydrone();
