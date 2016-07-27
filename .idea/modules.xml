@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Hive Prototype App/app.iml" filepath="$PROJECT_DIR$/Hive Prototype App/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hive Prototype App/Hive Prototype App.iml" filepath="$PROJECT_DIR$/Hive Prototype App/Hive Prototype App.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hive-App.iml" filepath="$PROJECT_DIR$/Hive-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/rosandroid-core/rosandroid-core.iml" filepath="$PROJECT_DIR$/libraries/rosandroid-core/rosandroid-core.iml" />
