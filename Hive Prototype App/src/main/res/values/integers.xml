@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="photo_list_preview_columns">3</integer>
+    <integer name="photo_list_top_offset">12</integer>
+    <integer name="photo_list_bottom_offset">12</integer>
+</resources>

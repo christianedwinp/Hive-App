@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Hive_ver1.0</string>
+
+    <!-- Strings related to welcomepage activity -->
+    <string name="signupbutton_text">CREATE AN ACCOUNT</string>
+    <string name="loginbutton_text">LOG IN</string>
+    <string name="welcoming_text">Insert your welcome text here</string>
+    <string name="title_activity_signup">Signup</string>
+    <string name="title_activity_login">Login</string>
+    <string name="passwordhint">Password</string>
+    <string name="userhint">Username/email</string>
+
+    <!--Strings related to sign up activity-->
+    <string name="signup_facebook_text">LOGIN WITH FACEBOOK</string>
+    <string name="signup_instagram_text">LOGIN WITH INSTAGRAM</string>
+    <string name="signup_firstnamehint">First name</string>
+    <string name="signup_lastnamehint">Last name</string>
+    <string name="signup_passwordhint">Choose password</string>
+    <string name="signup_emailhint">Email</string>
+
+    <!--Strings related to drone page-->
+    <string name="connect_drone">CONNECT TO DRONE</string>
+    <string name="text_registerdrone">Tap here to add your drone collection</string>
+
+    <!--Strings related to gallery tool bar-->
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="action_new">Settings</string>
+
+    <!--Strings related to wifi dialog-->
+    <string name="wifi_dialogTitle">Connect to drone ?</string>
+    <string name="wifi_dialogMessage">Your WiFi is either turn off or connected to another network. This application required to modify your wifi connection to run properly</string>
+
+    <!--Strings related to QR read dialog-->
+    <string name="QR_dialogTitle">Scan unsuccessful</string>
+    <string name="QR_dialogMessage">Do you want to rescan your drone QR code ?</string>
+</resources>

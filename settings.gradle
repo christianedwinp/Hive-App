@@ -1,1 +1,2 @@
-include ':app'
+include ':Hive Prototype App'
+include ':libraries:rosandroid-core'

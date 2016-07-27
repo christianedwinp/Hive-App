@@ -1,0 +1,15 @@
+<resources>
+
+    <!--PARENT THEME : No action bar theme-->
+    <style name="AppTheme_noactionbar" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/accent_color</item>
+    </style>
+
+    <!--TOOL BAR THEME-->
+    <style name="ToolbarColoredBackArrow" parent="AppTheme_noactionbar">
+        <item name="android:textColorSecondary">@color/color_text_primary</item>
+    </style>
+
+</resources>
